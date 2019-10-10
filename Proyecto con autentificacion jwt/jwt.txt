@@ -1,0 +1,55 @@
+JWT
+________
+
+Guards
+-------
+nos permite tomar disitnots tipos de decisiones en la anvegacion, quien puede ingrear y quien no
+- los guards que existen son:
+	CanActivate
+	CanactivateChild
+	CanLOad
+	CanDesactive
+	Resolve
+
+ -Se van a ejecutar cuando el ruteo aviso que guards  quiero que actuen
+
+ej. {path '', component:Homecomponent,
+	      CanActivathe:[AuthService,Adminservice]	,				 <-- aca entre [] servicios
+ 	      CanActivateChild:[]                                   			  <---Se activa en las rutas hijas no en ''
+	
+
+Childs:[]
+
+
+	}
+
+ng g guard Auth/auth 
+o 
+ng g service auth/auth pero hay q hacerlo mas complicado
+--
+cada guards devuelve un booleano si entra true.
+si retorno false. hago un router.navigate y lo saco de ahi
+
+
+_________
+const routes: Routes = [
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]}
+];
+
+_____________
+http investigar
+ this.http.post(" ", {} )
+    --> dentro del body paso el objeto cliente
+esto devuelve un observable
+
+-- le pego desde body-> raw - json para un objeto dentro de otro
+{
+	"cliente": {
+		"user": "juan",
+		
+ "email": "juan123",
+	
+	 "type": "admin",
+		 "img": "imagen.jpg"
+	}
+}
