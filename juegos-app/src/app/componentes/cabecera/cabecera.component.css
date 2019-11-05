@@ -1,0 +1,36 @@
+.divClass {
+    background-color:rgb(243, 183, 71);
+    width: 100%;
+}
+ .h1Class {
+    text-align: center;
+    color: rgb(182, 51, 175);
+    letter-spacing: 5pt;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+ }
+ * {
+    padding: 0;
+    margin: 0;
+  }
+
+/* .divImagen {
+   width: 90px;
+   height: 90px;
+   border: 1px solid silver;
+   position: relative;
+} */
+.navegacion {
+   text-align: center;
+   word-spacing: 5pt;
+   background-color: rgb(182, 51, 175);
+}
+.elemento {
+   padding-left:10pt;
+   padding-right: 10pt;
+   color:white;
+}
+p {
+   /* padding-left: 50pt; */
+   text-align: center;
+  
+}

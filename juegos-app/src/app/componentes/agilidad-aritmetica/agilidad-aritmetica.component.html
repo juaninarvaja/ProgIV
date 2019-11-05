@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--app-menu></app-menu-->
+<!-- index.html -->
+<app-cabecera></app-cabecera>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <div style="text-align:center">
+      <h1> ¡{{nuevoJuego.nombre}}! </h1>
+  </div>
+
+  <div *ngIf="!jugando">
+    <h2 style="text-align:center"><button  (click)="NuevoJuego()">Jugar a Agilidad Aritmética </button></h2>
+  </div>
+
+  <div class="juego" *ngIf="jugando">
+    <h2 [hidden]="!jugando" class="cuenta"><span>Calcular:  {{nuevoJuego.primerNumero}} {{nuevoJuego.operador}} {{nuevoJuego.segundoNumero}} = </span></h2>      
+     
+    <label class="ingrese "[hidden]="!jugando"> Respuesta:  <input id="numIngresado" [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control"/> </label>
+
+    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Tiempo restante {{Tiempo}} </button></h2>     
+
+    <h5 style="text-align: center"><p [hidden]="ocultarEsperando" ><i class="fa fa-spinner fa-spin"></i>Esperando numero</p></h5>
+
+    <h3 [hidden]="!nuevoJuego.gano" style="text-align: center">¡Usted adivino el número!</h3>
+  </div>
+
+<div id="snackbar">{{mensaje}}</div>

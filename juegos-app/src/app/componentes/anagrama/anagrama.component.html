@@ -1,0 +1,25 @@
+<app-cabecera></app-cabecera>
+<h1>{{nuevoJuego.nombre}}!</h1>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="text-align:center">
+
+ </div>
+<h2></h2>
+<form name="juego">
+    <h2><button  (click)="generarnumero()"  class="btn btn-info btn-lg">Nueva palabra secreta</button></h2>
+    <h3> {{nuevoJuego.palabraDesordenada}}</h3> 
+    <label>Ingrese palabra </label>  <input [(ngModel)]="nuevoJuego.palabraIngresada" (keyup.enter)="verificar()" placeholder="ingrese la palabra que considere correcta" name="palabraIngresada" type="text" class="form-control" style="width:50%"/>
+    <!-- <h1>{{nuevoJuego.palabraIngresada}}  </h1> -->
+    
+    <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.palabraIngresada!=''" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
+ 
+  
+    <h2><p *ngIf="nuevoJuego.palabraSecreta!=''" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese una palabra</p></h2>
+
+    <h4 [hidden]="!nuevoJuego.gano">Usted adivino la palabra</h4>
+    <h4 [hidden]="nuevoJuego.gano">No! sigue intentando! </h4>
+
+
+</form>
+<div id="snackbar">{{Mensajes}}</div>

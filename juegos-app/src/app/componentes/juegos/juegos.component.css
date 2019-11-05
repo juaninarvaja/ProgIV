@@ -1,0 +1,11 @@
+.navegacion {
+    text-align: center;
+    word-spacing: 5pt;
+    background-color: rgb(182, 51, 175);
+}
+.elemento {
+    text-align: justify;
+    /* padding-left:40pt;
+    padding-right: 40pt; */
+    color:white;
+}
